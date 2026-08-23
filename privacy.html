@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Solfege Academie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: #f0f0f0;
+                background: #1a1a1a;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: #2a2a2a;
+            }
+        }
+
+        .nav {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: #764ba2;
+        }
+
+        .nav a.home {
+            background: #666;
+        }
+
+        .nav a.home:hover {
+            background: #555;
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .lang-btn {
+                background: #333;
+                border-color: #555;
+                color: #f0f0f0;
+            }
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .language-section {
+            display: none;
+        }
+
+        .language-section.active {
+            display: block;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .last-updated {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .last-updated {
+                color: #666;
+            }
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: #f0f4ff;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .highlight {
+                background: #2a3a5a;
+                border-left-color: #764ba2;
+            }
+        }
+
+        .contact-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .contact-section {
+                background: #333;
+            }
+        }
+
+        .contact-section a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .footer {
+                border-top-color: #444;
+                color: #999;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .nav a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html" class="home">Home</a>
+            <a href="support.html">Support & FAQ</a>
+        </div>
+
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('fr')">Français</button>
+        </div>
+
+        <!-- English Section -->
+        <div id="en-section" class="language-section active">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: August 23, 2026</p>
+            <p><strong>Solfege Academie</strong></p>
+
+            <h2>Overview</h2>
+            <p>Solfege Academie ("the App") is committed to protecting your privacy. This privacy policy explains our practices regarding data collection and your rights.</p>
+
+            <div class="highlight">
+                <strong>Key Principle:</strong> We do not collect any personal data. All user data is stored locally on your device.
+            </div>
+
+            <h2>What We Do Not Collect</h2>
+            <ul>
+                <li>No personal information (names, emails, phone numbers, etc.)</li>
+                <li>No tracking data or analytics</li>
+                <li>No advertising data</li>
+                <li>No device identifiers or advertising IDs</li>
+                <li>No user accounts or login credentials</li>
+                <li>No location data</li>
+                <li>No third-party analytics services</li>
+            </ul>
+
+            <h2>How We Protect Your Data</h2>
+            <h3>Local Storage</h3>
+            <p>All data generated by using Solfege Academie—including user profiles, scores, practice history, and app settings—is stored exclusively on your iOS device. We have no access to this data.</p>
+
+            <h3>iCloud Synchronization (Optional)</h3>
+            <p>If you choose to enable iCloud backup in your device settings, your app data may be synced to your personal iCloud account using Apple's NSUbiquitousKeyValueStore. This synchronization is:</p>
+            <ul>
+                <li>Entirely optional and controlled by you</li>
+                <li>Encrypted by Apple using your own encryption keys</li>
+                <li>Never accessible to Solfege Academie developers or publishers</li>
+                <li>Managed through your personal iCloud settings</li>
+            </ul>
+
+            <h3>Profile Photos</h3>
+            <p>Any profile photos you add are stored locally on your device only. They are never uploaded to our servers or any third-party service.</p>
+
+            <h2>Children's Privacy</h2>
+            <p>Solfege Academie is designed with children and young learners in mind. The App complies with the spirit of COPPA (Children's Online Privacy Protection Act) and GDPR by design:</p>
+            <ul>
+                <li>No data collection whatsoever</li>
+                <li>No account creation required</li>
+                <li>No contact with third-party services</li>
+                <li>All learning happens privately on the child's device</li>
+            </ul>
+
+            <h2>Your Data Rights</h2>
+            <p>Since all data is stored locally on your device, you have complete control:</p>
+            <ul>
+                <li><strong>Access:</strong> View and manage all app data directly on your device settings</li>
+                <li><strong>Modification:</strong> Edit profiles, scores, and settings within the app</li>
+                <li><strong>Deletion:</strong> Delete any profile or feature within the app, or uninstall the app entirely to remove all associated data</li>
+                <li><strong>Portability:</strong> Your data remains yours; sync to iCloud is under your control</li>
+            </ul>
+
+            <h2>Third-Party Services</h2>
+            <p>The App does not integrate with any third-party analytics, advertising, or data collection services. Your experience is private.</p>
+
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be reflected with an updated "Last Updated" date on this page. Continued use of the App constitutes acceptance of any changes.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this privacy policy or our practices, please contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:support.music.academy@gmail.com">support.music.academy@gmail.com</a></p>
+
+            <div class="contact-section">
+                <p>Your privacy matters to us. We believe music learning should be private, safe, and free from data collection.</p>
+            </div>
+        </div>
+
+        <!-- French Section -->
+        <div id="fr-section" class="language-section">
+            <h1>Politique de Confidentialité</h1>
+            <p class="last-updated">Dernière mise à jour : 23 août 2026</p>
+            <p><strong>Solfège Académie</strong></p>
+
+            <h2>Vue d'ensemble</h2>
+            <p>Solfège Académie (« l'Application ») s'engage à protéger votre confidentialité. Cette politique explique nos pratiques concernant la collecte de données et vos droits.</p>
+
+            <div class="highlight">
+                <strong>Principe clé :</strong> Nous ne collectons aucune donnée personnelle. Toutes les données utilisateur sont stockées localement sur votre appareil.
+            </div>
+
+            <h2>Ce que nous ne collectons pas</h2>
+            <ul>
+                <li>Aucune information personnelle (noms, emails, numéros de téléphone, etc.)</li>
+                <li>Aucune donnée de suivi ou d'analyse</li>
+                <li>Aucune donnée publicitaire</li>
+                <li>Aucun identifiant d'appareil ou identifiant publicitaire</li>
+                <li>Aucun compte utilisateur ou identifiant de connexion</li>
+                <li>Aucune donnée de localisation</li>
+                <li>Aucun service d'analyse tiers</li>
+            </ul>
+
+            <h2>Comment nous protégeons vos données</h2>
+            <h3>Stockage local</h3>
+            <p>Toutes les données générées par l'utilisation de Solfège Académie—y compris les profils utilisateur, les scores, l'historique d'entraînement et les paramètres de l'application—sont stockées exclusivement sur votre appareil iOS. Nous n'y avons aucun accès.</p>
+
+            <h3>Synchronisation iCloud (Facultative)</h3>
+            <p>Si vous choisissez d'activer la sauvegarde iCloud dans les paramètres de votre appareil, les données de l'application peuvent être synchronisées avec votre compte iCloud personnel via NSUbiquitousKeyValueStore d'Apple. Cette synchronisation :</p>
+            <ul>
+                <li>Est entièrement facultative et contrôlée par vous</li>
+                <li>Est chiffrée par Apple avec vos propres clés de chiffrement</li>
+                <li>N'est jamais accessible aux développeurs ou éditeurs de Solfège Académie</li>
+                <li>Est gérée via les paramètres iCloud personnels de votre appareil</li>
+            </ul>
+
+            <h3>Photos de profil</h3>
+            <p>Les photos de profil que vous ajoutez sont stockées localement sur votre appareil uniquement. Elles ne sont jamais téléchargées sur nos serveurs ou aucun service tiers.</p>
+
+            <h2>Confidentialité des enfants</h2>
+            <p>Solfège Académie est conçue pour les enfants et les jeunes apprenants. L'Application se conforme à l'esprit de COPPA (Children's Online Privacy Protection Act) et du RGPD par conception :</p>
+            <ul>
+                <li>Aucune collecte de données</li>
+                <li>Aucune création de compte requise</li>
+                <li>Aucun contact avec les services tiers</li>
+                <li>Tout l'apprentissage se fait en privé sur l'appareil de l'enfant</li>
+            </ul>
+
+            <h2>Vos droits relatifs aux données</h2>
+            <p>Puisque toutes les données sont stockées localement sur votre appareil, vous avez un contrôle total :</p>
+            <ul>
+                <li><strong>Accès :</strong> Consultez et gérez toutes les données de l'application directement dans les paramètres de votre appareil</li>
+                <li><strong>Modification :</strong> Modifiez les profils, les scores et les paramètres dans l'application</li>
+                <li><strong>Suppression :</strong> Supprimez tout profil ou fonctionnalité dans l'application, ou désinstallez l'application entièrement pour supprimer toutes les données associées</li>
+                <li><strong>Portabilité :</strong> Vos données vous appartiennent ; la synchronisation iCloud est sous votre contrôle</li>
+            </ul>
+
+            <h2>Services tiers</h2>
+            <p>L'Application n'intègre aucun service d'analyse tiers, publicitaire ou de collecte de données. Votre expérience est privée.</p>
+
+            <h2>Modifications de cette politique</h2>
+            <p>Nous pouvons mettre à jour cette Politique de Confidentialité de temps en temps. Toute modification sera indiquée par une date « Dernière mise à jour » mise à jour sur cette page. L'utilisation continue de l'Application constitue une acceptation de tout changement.</p>
+
+            <h2>Nous contacter</h2>
+            <p>Si vous avez des questions sur cette politique de confidentialité ou nos pratiques, veuillez nous contacter à :</p>
+            <p><strong>Email :</strong> <a href="mailto:support.music.academy@gmail.com">support.music.academy@gmail.com</a></p>
+
+            <div class="contact-section">
+                <p>Votre confidentialité est importante pour nous. Nous croyons que l'apprentissage de la musique doit être privé, sûr et exempt de collecte de données.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Solfege Academie. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.getElementById('en-section').classList.remove('active');
+            document.getElementById('fr-section').classList.remove('active');
+
+            if (lang === 'en') {
+                document.getElementById('en-section').classList.add('active');
+            } else if (lang === 'fr') {
+                document.getElementById('fr-section').classList.add('active');
+            }
+
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const preferredLang = localStorage.getItem('preferredLanguage') || 'en';
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if ((preferredLang === 'en' && btn.textContent === 'English') ||
+                    (preferredLang === 'fr' && btn.textContent === 'Français')) {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

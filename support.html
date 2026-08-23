@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & FAQ - Solfege Academie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: #f0f0f0;
+                background: #1a1a1a;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: #2a2a2a;
+            }
+        }
+
+        .nav {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: #764ba2;
+        }
+
+        .nav a.home {
+            background: #666;
+        }
+
+        .nav a.home:hover {
+            background: #555;
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .lang-btn {
+                background: #333;
+                border-color: #555;
+                color: #f0f0f0;
+            }
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .language-section {
+            display: none;
+        }
+
+        .language-section.active {
+            display: block;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .subtitle {
+                color: #bbb;
+            }
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+
+        .faq-question {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-question::before {
+            content: '▸';
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .faq-item.open .faq-question::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-answer {
+            display: none;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .faq-answer {
+                color: #ccc;
+            }
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .contact-section {
+            background: #f0f4ff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .contact-section {
+                background: #2a3a5a;
+            }
+        }
+
+        .contact-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .contact-section a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        .feature-highlight {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .feature-highlight {
+                background: #333;
+            }
+        }
+
+        .feature-highlight strong {
+            color: #667eea;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .footer {
+                border-top-color: #444;
+                color: #999;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .faq-question {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html" class="home">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('fr')">Français</button>
+        </div>
+
+        <!-- English Section -->
+        <div id="en-section" class="language-section active">
+            <h1>Support & FAQ</h1>
+            <p class="subtitle">Welcome to Solfege Academie! Find answers to common questions below.</p>
+
+            <h2>About Solfege Academie</h2>
+            <p>Solfege Academie is a comprehensive music theory learning app designed for students of all ages. Practice sight-reading, ear training, rhythm, and more at your own pace. Unlock new instruments and features as you progress through your learning journey.</p>
+
+            <div class="feature-highlight">
+                <strong>Key Features:</strong> Bilingual interface (English & French), unlock system with points, sandbox mode for creative experimentation, local data storage, and no accounts needed.
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">How do I switch between profiles?</div>
+                <div class="faq-answer">
+                    <p>You can easily switch between profiles from the main menu. Tap the profile selector at the top of the screen and choose from your existing profiles or create a new one. Each profile maintains its own progress, scores, and settings independently.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">How do I unlock new instruments?</div>
+                <div class="faq-answer">
+                    <p>Instruments are unlocked by earning points through practice activities. Complete lessons, practice exercises, and answer questions correctly to earn points. As you accumulate points, new instruments become available in your collection. Check the "Instruments" tab to see your progress and which instruments are coming next.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">What is the Sandbox mode?</div>
+                <div class="faq-answer">
+                    <p>The Sandbox is a creative space where you can freely experiment with music notation and theory without restrictions. It unlocks once you reach 500 points. In Sandbox mode, you can compose, explore different instruments, and test your musical ideas in a pressure-free environment.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">What languages does the app support?</div>
+                <div class="faq-answer">
+                    <p>Solfege Academie is fully available in English and French. You can switch languages anytime from the app settings. All content, lessons, and interface elements are translated.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Do I need to create an account?</div>
+                <div class="faq-answer">
+                    <p>No! Solfege Academie requires no account creation, login, or registration. Start learning immediately. Your profiles and progress are stored locally on your device. Optionally, you can enable iCloud backup for automatic synchronization across your Apple devices.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Where is my data stored?</div>
+                <div class="faq-answer">
+                    <p>All your data—profiles, scores, practice history, and settings—is stored exclusively on your device. We never collect or access your data. If you enable iCloud backup in your device settings, your data can be synced to your personal iCloud account for backup and cross-device access, but this is completely optional and under your control.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">How can I reset or delete my profile?</div>
+                <div class="faq-answer">
+                    <p>You can delete a profile directly within the app by selecting it and tapping the delete option. To completely remove all app data, uninstall the app from your device. This permanently deletes all profiles, scores, and settings. If you have iCloud backup enabled, you may also manage your iCloud data through your device's iCloud settings.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Is the app suitable for children?</div>
+                <div class="faq-answer">
+                    <p>Yes! Solfege Academie is designed with children in mind. The app is safe, engaging, and focuses on music education. Importantly, we collect no personal data whatsoever—no tracking, no accounts, no contact with third parties. Parents can be assured that their children's privacy is fully protected by design.</p>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h3>Need More Help?</h3>
+                <p>If you have questions not answered above or need technical support, please reach out to us:</p>
+                <p style="margin-top: 15px;"><strong>Email:</strong> <a href="mailto:support.music.academy@gmail.com">support.music.academy@gmail.com</a></p>
+                <p style="margin-top: 10px; font-size: 0.9em;">We typically respond within 24-48 hours.</p>
+            </div>
+        </div>
+
+        <!-- French Section -->
+        <div id="fr-section" class="language-section">
+            <h1>Assistance & FAQ</h1>
+            <p class="subtitle">Bienvenue sur Solfège Académie ! Trouvez les réponses aux questions courantes ci-dessous.</p>
+
+            <h2>À propos de Solfège Académie</h2>
+            <p>Solfège Académie est une application complète d'apprentissage de la théorie musicale conçue pour les étudiants de tous les âges. Pratiquez la lecture à vue, l'entraînement auditif, le rythme, et bien plus encore à votre propre rythme. Débloquez de nouveaux instruments et fonctionnalités au fur et à mesure de votre progression.</p>
+
+            <div class="feature-highlight">
+                <strong>Fonctionnalités clés :</strong> Interface bilingue (anglais et français), système de déblocage par points, mode bac à sable pour l'expérimentation créative, stockage local des données, et aucun compte requis.
+            </div>
+
+            <h2>Questions Fréquemment Posées</h2>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Comment puis-je passer d'un profil à l'autre ?</div>
+                <div class="faq-answer">
+                    <p>Vous pouvez facilement passer d'un profil à l'autre depuis le menu principal. Appuyez sur le sélecteur de profil en haut de l'écran et choisissez parmi vos profils existants ou créez-en un nouveau. Chaque profil conserve sa propre progression, ses scores et ses paramètres indépendamment.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Comment débloqué-je de nouveaux instruments ?</div>
+                <div class="faq-answer">
+                    <p>Les instruments sont débloqués en gagnant des points grâce aux activités de pratique. Complétez les leçons, pratiquez les exercices et répondez correctement aux questions pour gagner des points. Au fur et à mesure que vous accumulez des points, de nouveaux instruments deviennent disponibles dans votre collection. Consultez l'onglet « Instruments » pour voir votre progression et les instruments à venir.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Qu'est-ce que le mode Bac à sable ?</div>
+                <div class="faq-answer">
+                    <p>Le Bac à sable est un espace créatif où vous pouvez expérimenter librement la notation musicale et la théorie sans restrictions. Il se débloque une fois que vous atteignez 500 points. En mode Bac à sable, vous pouvez composer, explorer différents instruments et tester vos idées musicales dans un environnement sans pression.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Quelles langues l'application supporte-t-elle ?</div>
+                <div class="faq-answer">
+                    <p>Solfège Académie est entièrement disponible en anglais et en français. Vous pouvez changer de langue à tout moment depuis les paramètres de l'application. Tous les contenus, les leçons et les éléments de l'interface sont traduits.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Dois-je créer un compte ?</div>
+                <div class="faq-answer">
+                    <p>Non ! Solfège Académie ne nécessite aucune création de compte, connexion ou inscription. Commencez à apprendre immédiatement. Vos profils et votre progression sont stockés localement sur votre appareil. Optionnellement, vous pouvez activer la sauvegarde iCloud pour une synchronisation automatique sur vos appareils Apple.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Où mes données sont-elles stockées ?</div>
+                <div class="faq-answer">
+                    <p>Toutes vos données—profils, scores, historique d'entraînement et paramètres—sont stockées exclusivement sur votre appareil. Nous ne collectons jamais vos données. Si vous activez la sauvegarde iCloud dans les paramètres de votre appareil, vos données peuvent être synchronisées avec votre compte iCloud personnel pour la sauvegarde et l'accès multi-appareils, mais c'est entièrement facultatif et sous votre contrôle.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">Comment puis-je réinitialiser ou supprimer mon profil ?</div>
+                <div class="faq-answer">
+                    <p>Vous pouvez supprimer un profil directement dans l'application en le sélectionnant et en appuyant sur l'option de suppression. Pour supprimer complètement toutes les données de l'application, désinstallez l'application de votre appareil. Cela supprime définitivement tous les profils, scores et paramètres. Si vous avez activé la sauvegarde iCloud, vous pouvez également gérer vos données iCloud via les paramètres iCloud de votre appareil.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">L'application est-elle adaptée aux enfants ?</div>
+                <div class="faq-answer">
+                    <p>Oui ! Solfège Académie est conçue en pensant aux enfants. L'application est sûre, engageante et se concentre sur l'éducation musicale. Surtout, nous ne collectons aucune donnée personnelle—pas de suivi, pas de comptes, pas de contact avec les tiers. Les parents peuvent être assurés que la confidentialité de leurs enfants est pleinement protégée par conception.</p>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h3>Besoin d'aide supplémentaire ?</h3>
+                <p>Si vous avez des questions non répondues ci-dessus ou besoin d'assistance technique, veuillez nous contacter :</p>
+                <p style="margin-top: 15px;"><strong>Email :</strong> <a href="mailto:support.music.academy@gmail.com">support.music.academy@gmail.com</a></p>
+                <p style="margin-top: 10px; font-size: 0.9em;">Nous répondons généralement dans les 24 à 48 heures.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Solfege Academie. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            element.classList.toggle('open');
+        }
+
+        function setLanguage(lang) {
+            document.getElementById('en-section').classList.remove('active');
+            document.getElementById('fr-section').classList.remove('active');
+
+            if (lang === 'en') {
+                document.getElementById('en-section').classList.add('active');
+            } else if (lang === 'fr') {
+                document.getElementById('fr-section').classList.add('active');
+            }
+
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const preferredLang = localStorage.getItem('preferredLanguage') || 'en';
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if ((preferredLang === 'en' && btn.textContent === 'English') ||
+                    (preferredLang === 'fr' && btn.textContent === 'Français')) {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
